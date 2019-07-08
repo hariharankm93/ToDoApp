@@ -1,3 +1,13 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  background-color: #7E57C2;
+  color: white;
+}
+
 .App {
   text-align: center;
 }
@@ -29,5 +39,66 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+.container{
+  width: 95%;
+  margin: 0 auto;
+}
+
+.container h1{
+  text-align: center;
+  color: white;
+}
+.sub-container{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.sub-container input{
+  width: 80%;
+  color : #444444;
+  padding: 10px 25px;
+  border-radius: 10px;
+  outline: none;
+  border-radius: 0.4rem;
+  border: none;
+}
+
+.sub-container button{
+  padding: 10px 25px;
+  color : white;
+  background-color: #7E57C2;
+  border-radius: 10px;
+  outline: none;
+  border : 1px solid white;
+  margin: 0 10px;
+  transition: 0.4s
+}
+
+.sub-container button:hover{
+  background-color : white;
+  color: dodgerblue;
+
+}
+.sub-container ul{
+  padding: 0;
+}
+.sub-container ul > li{
+  list-style-type: none;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+@media only screen and (max-width : 630px){
+  .sub-container input{
+    width: 100%;
+  }
+
+  .sub-container button{
+    width: 100%;
+    margin : 10px 0;
   }
 }
