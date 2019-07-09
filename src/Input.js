@@ -25,6 +25,9 @@ class Input extends React.Component{
             if(res.data){
                 this.props.fun(res.data);
                 this.props.getData();
+                this.setState((state,props) =>{
+                    return {listItem : ''}
+                })
                
             }
         }).catch(err => console.log(err))
