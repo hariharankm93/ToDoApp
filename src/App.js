@@ -26,6 +26,13 @@ class App extends React.Component{
     }).catch(err => console.log(err))
   }
 
+  strikeItem = (Item) =>{
+    axios.post(`api/todos/${Item._id}`,{...Item,isChecked : !Item.isChecked}).then(res =>{
+      if(res.data){
+        this.getData();
+      }
+    }).catch(err => console.log(err))
+  }
   componentDidMount(){
     this.getData()  
   }
@@ -40,7 +47,7 @@ class App extends React.Component{
       <h1>Todo App</h1>
       <div className="sub-container">
       <Input fun={this.addToDo} getData={this.getData}/>
-      <ListComponent data={this.state.list} delete={this.deleteItems}/>
+      <ListComponent data={this.state.list} strike={this.strikeItem}/>
       </div>
     </div>)
   }

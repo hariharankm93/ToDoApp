@@ -5,6 +5,9 @@ const ToDoSchema = new Schema({
     action :{
         type : String,
         required : [true,'Text field required']
+    },
+    isChecked :{
+        type : Boolean
     }
 })
 

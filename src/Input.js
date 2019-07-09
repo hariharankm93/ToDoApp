@@ -5,7 +5,8 @@ class Input extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            listItem : ''
+            listItem : '',
+            isChecked : false
         
         };
     }
@@ -18,7 +19,7 @@ class Input extends React.Component{
     }
 
     submitData = () =>{  
-        const data = {action : this.state.listItem};
+        const data = {action : this.state.listItem,isChecked : this.state.isChecked};
        if(data.action && data.action.length > 0){
         axios.post('api/todos',data).then(res => {
             if(res.data){
